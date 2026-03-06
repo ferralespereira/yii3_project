@@ -1,6 +1,27 @@
 <?php
+use App\Web\Echo\Form;
+use Yiisoft\FormModel\Field;
 use Yiisoft\Html\Html;
-/* @var string $message */
+use Yiisoft\Router\UrlGeneratorInterface;
+use Yiisoft\Yii\View\Renderer\Csrf;
+
+/**
+ * @var Form $form
+ * @var string[] $errors
+ * @var UrlGeneratorInterface $urlGenerator
+ * @var Csrf $csrf
+ */
+
+$htmlForm = Html::form()
+    ->post($urlGenerator->generate('echo/say'))
+    ->csrf($csrf);
 ?>
 
-<p>The message is: <?= Html::encode($message) ?></p>
+<?= $htmlForm->open() ?>
+    <?= Field::text($form, 'message')->required() ?>
+    <?= Html::submitButton('Say') ?>
+<?= $htmlForm->close() ?>
+
+<?php if ($form->isValid()): ?>
+    Echo said: <?= Html::encode($form->message) ?>
+<?php endif ?>

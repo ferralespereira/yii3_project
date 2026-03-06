@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use App\Web;
+use Yiisoft\Http\Method;
 use Yiisoft\Router\Group;
 use Yiisoft\Router\Route;
 
@@ -12,8 +13,8 @@ return [
             Route::get('/')
                 ->action(Web\HomePage\Action::class)
                 ->name('home'),
-            Route::get('/say[/{message}]')
-                    ->action(Web\Echo\Action::class)
-                    ->name('echo/say'),
+            Route::methods([Method::GET, Method::POST], '/say')
+                ->action(Web\Echo\Action::class)
+                ->name('echo/say'),
         ),
 ];
