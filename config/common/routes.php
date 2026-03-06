@@ -12,5 +12,8 @@ return [
             Route::get('/')
                 ->action(Web\HomePage\Action::class)
                 ->name('home'),
+            Route::get('/say[/{message}]')
+                    ->action(Web\Echo\Action::class)
+                    ->name('echo/say'),
         ),
 ];
