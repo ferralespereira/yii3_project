@@ -35,4 +35,10 @@ return [
             Reference::to(CsrfViewInjection::class),
         ],
     ],
+
+    // to create migration: php yii migrate/create create_users_table
+    'yiisoft/db-migration' => [
+        'newMigrationNamespace' => 'App\\Migration',
+        'sourceNamespaces' => ['App\\Migration'],
+    ],
 ];

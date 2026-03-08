@@ -57,7 +57,7 @@ endif
 
 ifeq ($(PRIMARY_GOAL),yii)
 yii: ## Execute Yii command
-	$(DOCKER_COMPOSE_DEV) run --rm app ./yii $(CLI_ARGS)
+	./yii $(CLI_ARGS)
 .PHONY: yii
 endif
 
