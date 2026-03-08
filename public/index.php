@@ -10,6 +10,13 @@ use Yiisoft\Log\Logger;
 use Yiisoft\Log\Target\File\FileTarget;
 use Yiisoft\Yii\Runner\Http\HttpApplicationRunner;
 
+
+// to load environment variables from .env file
+require dirname(__DIR__) . '/vendor/autoload.php';
+$dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
+$dotenv->load();
+
+
 $root = dirname(__DIR__);
 
 require_once $root . '/src/autoload.php';
