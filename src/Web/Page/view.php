@@ -36,7 +36,7 @@ $deleteForm = Html::form()
                     <p class="mb-4 text-body-secondary"><?= Html::encode($page->text) ?></p>
 
                     <div class="d-flex gap-2 align-items-center">
-                        <?= Html::a('Edit', $urlGenerator->generate('page/edit', ['slug' => $page->slug]), ['class' => 'btn btn-outline-primary']) ?>
+                        <?= Html::a('Edit', $urlGenerator->generate('page/edit', ['slug' => $page->slug]), ['class' => 'btn btn-primary text-white']) ?>
 
                         <?= $deleteForm->open(['class' => 'm-0']) ?>
                             <?= Html::submitButton('Delete', ['class' => 'btn btn-outline-danger']) ?>
