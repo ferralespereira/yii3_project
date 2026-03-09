@@ -72,7 +72,7 @@ $this->beginPage()
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
         <div class="container-fluid">
             <a class="navbar-brand" href="<?= $urlGenerator->generate('home') ?>">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 216.495">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 216.495" style="width: 120px;">
                     <style>.st0 {
                             fill: #40b3d8
                         }</style>
