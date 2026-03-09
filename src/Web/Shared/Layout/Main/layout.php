@@ -112,7 +112,7 @@ $this->beginPage()
                     <a class="nav-link active" aria-current="page" href="<?= $urlGenerator->generate('page/list') ?>">Pages</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true">About Us</a>
+                    <a class="nav-link active" aria-current="page" href="<?= $urlGenerator->generate('about') ?>">About Us</a>
                 </li>
             </ul>
             </div>

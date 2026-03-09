@@ -13,6 +13,9 @@ return [
             Route::get('/')
                 ->action(Web\HomePage\Action::class)
                 ->name('home'),
+            Route::get('/about')
+                ->action(Web\About\Action::class)
+                ->name('about'),
             Route::methods([Method::GET, Method::POST], '/say')
                 ->action(Web\Echo\Action::class)
                 ->name('echo/say'),
