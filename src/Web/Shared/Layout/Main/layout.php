@@ -16,6 +16,7 @@ use Yiisoft\Html\Html;
  * @var Yiisoft\Router\UrlGeneratorInterface $urlGenerator
  */
 
+$urlGenerator = $this->getParameter('urlGenerator');
 $assetManager->register(MainAsset::class);
 
 $this->addCssFiles($assetManager->getCssFiles());
@@ -34,6 +35,8 @@ $this->beginPage()
     <link rel="icon" href="<?= $aliases->get('@baseUrl/favicon.svg') ?>" type="image/svg+xml">
     <title><?= Html::encode($this->getTitle()) ?></title>
     <?php $this->head() ?>
+
+    <?php $this->registerCssFile('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css') ?>
 </head>
 <body>
 <?php $this->beginBody() ?>
@@ -65,6 +68,26 @@ $this->beginPage()
             </g>
         </svg>
     </a>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light row justify-content-end">
+        <div class="container-fluid row col-auto justify-content-end">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="<?= $urlGenerator->generate('home') ?>">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="<?= $urlGenerator->generate('echo/say') ?>">Say</a>
+                    </li>
+                    <li class="nav-item">
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 </div>
 
 <div class="content">
@@ -122,6 +145,7 @@ $this->beginPage()
     </div>
 </div>
 
+<?php $this->registerJsFile('https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js') ?>
 <?php $this->endBody() ?>
 </body>
 </html>
