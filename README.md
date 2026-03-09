@@ -1,5 +1,7 @@
 # Yii3 Web Application
 
+## Yii3 + Bootstrap + Postgres
+
 A modern web application built with [Yii3 Framework](https://www.yiiframework.com/), a high-performance PHP framework.
 
 ## Features
