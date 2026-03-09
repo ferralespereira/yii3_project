@@ -21,4 +21,5 @@ jobs:
           key: ${{ secrets.EC2_SSH_KEY }}
           script: |
             cd /var/www/html/yii3_project
-            git pull origin main
+            git fetch origin main
+            git reset --hard origin/main
