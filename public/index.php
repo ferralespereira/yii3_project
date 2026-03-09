@@ -13,7 +13,8 @@ use Yiisoft\Yii\Runner\Http\HttpApplicationRunner;
 
 // to load environment variables from .env file
 require dirname(__DIR__) . '/vendor/autoload.php';
-$dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
+// $dotenv = Dotenv\Dotenv::createImmutable(dirname(__DIR__));
+$dotenv = Dotenv\Dotenv::createUnsafeImmutable(dirname(__DIR__));
 $dotenv->load();
 
 
