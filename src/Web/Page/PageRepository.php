@@ -44,16 +44,26 @@ final readonly class PageRepository
     /**
      * @return iterable<Page>
      */
-    public function findAll(): iterable
+    public function findAll(int $limit = 10, int $offset = 0): iterable
     {
         $rows = $this->connection
             ->select()
             ->from('{{%page}}')
+            ->limit($limit)
+            ->offset($offset)
             ->all();
 
         foreach ($rows as $row) {
             yield $this->createPage($row);
         }
+    }
+
+    public function count(): int
+    {
+        return (int) $this->connection
+            ->createQuery()
+            ->from('{{%page}}')
+            ->count();
     }
 
     private function createPage(?array $row): ?Page
